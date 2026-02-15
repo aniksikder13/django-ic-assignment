@@ -1,9 +1,14 @@
 from django.contrib import admin
 from .models import Author, Book, Category
 
-# Register your models here.
-admin.site.register(Author)
-admin.site.register(Category)
+
+class AuthorAdmin(admin.ModelAdmin):
+    list_per_page = 10
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_per_page = 10
+
 
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'published_date', 'status')
@@ -13,3 +18,5 @@ class BookAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Book, BookAdmin)
+admin.site.register(Author, AuthorAdmin)
+admin.site.register(Category, CategoryAdmin)
