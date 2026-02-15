@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+<div class="book-detail-container">
+
+    <div class="book-card">
+
+        <div class="book-header">
+            <h1>{{ book.title }}</h1>
+
+            {% if book.status %}
+                <span class="status available">Available</span>
+            {% else %}
+                <span class="status unavailable">Not Available</span>
+            {% endif %}
+        </div>
+
+        <div class="book-meta">
+            <p><strong>Category:</strong> 
+                <span class="badge">{{ book.category.name }}</span>
+            </p>
+
+            <p><strong>Author(s):</strong>
+                {% for author in book.author.all %}
+                    <span class="badge-light">
+                        {{ author.first_name }} {{ author.last_name }}
+                    </span>
+                {% empty %}
+                    No Author
+                {% endfor %}
+            </p>
+
+            <p><strong>Published:</strong> {{ book.published_date|default:"Not specified" }}</p>
+            <p><strong>Added On:</strong> {{ book.created_at|date:"F d, Y" }}</p>
+        </div>
+
+        <div class="book-description">
+            <h3>Description</h3>
+            <p>{{ book.description }}</p>
+        </div>
+
+        <div class="back-button">
+            {% comment %} <a href="{% url 'books' %}">← Back to Books</a> {% endcomment %}
+            <button onclick="window.history.back()">← Back to Books</button>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

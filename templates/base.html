@@ -1,0 +1,52 @@
+{% load static %}
+{% now "Y" as current_year %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock  %} 
+    </title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block style %}{% endblock  %} 
+</head>
+<body>
+    <header id="main-navigation">
+        <h1>
+            Library
+        </h1>
+        <nav>
+            <a href="{% url "books" %}">
+                Books
+            </a>
+            <a href="{% url "add-book" %}"  style='padding-left: 15px'>
+                Add Book
+            </a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock  %} 
+    </main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>Library Management System</h3>
+            <p>Manage books, authors and categories easily.</p>
+        </div>
+
+        <div class="footer-right">
+            <p>
+                &copy; {{ current_year }} Library Management. 
+                All rights reserved.
+            </p>
+            <p class="developer">
+                Developed with ❤️ using Django
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

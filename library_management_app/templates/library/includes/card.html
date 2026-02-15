@@ -1,0 +1,22 @@
+{% load static %}
+
+<li class="book-card">
+  <article class="book">
+    <a href="{% url 'blog_detail' book.id %}">
+      <div class="book_content">
+        <h3>{{ book.title }}</h3>
+
+        <div class="book_meta">
+          {{ book.author.all|join:", " }} - {{ book.published_date }}
+        </div>
+
+        {% if book.status %}
+          <span class="status-badge status-available">Available</span>
+        {% else %}
+          <span class="status-badge status-unavailable">Not Available</span>
+        {% endif %}
+
+      </div>
+    </a>
+  </article>
+</li>

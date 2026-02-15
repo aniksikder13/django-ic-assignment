@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Books
+{% endblock  %} 
+
+{% block content %}
+
+    <section>
+        <h2>Collected Books</h2>
+
+        <ul class="book-container">
+            {% for book in books %}
+                {% include "./includes/card.html" %}
+            {% endfor %}
+        </ul>
+
+        {% include "./includes/pagination.html" %}
+    </section>
+
+{% endblock  %} 

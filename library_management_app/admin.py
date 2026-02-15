@@ -3,10 +3,12 @@ from .models import Author, Book, Category
 
 
 class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'created_at')
     list_per_page = 10
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'created_at')
     list_per_page = 10
 
 
