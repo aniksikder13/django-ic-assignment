@@ -42,7 +42,8 @@
 
         <div class="back-button">
             {% comment %} <a href="{% url 'books' %}">← Back to Books</a> {% endcomment %}
-            <button onclick="window.history.back()">← Back to Books</button>
+             <a href="{% url 'books' %}">← Back to Books</a>
+            <a href="{% url 'book_update' book.id %}">Edit</a>
         </div>
 
     </div>

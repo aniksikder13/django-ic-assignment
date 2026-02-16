@@ -289,18 +289,141 @@ main{
 
 .back-button {
     margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.back-button button {
+.back-button button, .back-button a {
     text-decoration: none;
     color: #4e73df;
     cursor: pointer;
+    font-size: 0.85rem;
     font-weight: bold;
     background-color: transparent;
     outline: none;
     border: none;
 }
 
-.back-button button:hover {
+.back-button button:hover, .back-button a:hover {
     text-decoration: underline;
 }
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+/* Card Design */
+.form-card {
+    width: 520px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Title */
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #444;
+    font-weight: 500;
+}
+
+/* Input Fields */
+.input-field {
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: 0.3s ease;
+    margin: 5px 0px;
+    width: 100%;
+    background: #fafafa;
+}
+
+/* Focus Animation */
+.input-field:focus {
+    border-color: #4a90e2;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+/* Multiple Select Height */
+select[multiple] {
+    min-height: 100px;
+    width: 100%;
+}
+
+/* Checkbox */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-field {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Buttons */
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #4a90e2;
+    color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.btn-primary:hover {
+    background: #357abd;
+}
+
+.book-form{
+    display: grid;
+    grid-gap: 15px;
+    max-width: 800px;
+    margin: auto;
+}
+
