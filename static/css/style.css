@@ -104,6 +104,21 @@ main{
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     height: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.book button{
+    font-size: 1.4rem;
+    color: red;
+    height: fit-content;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
 .book:hover {
@@ -114,6 +129,8 @@ main{
 .book a {
     text-decoration: none;
     color: inherit;
+    width: 100%;
+    display: block;
 }
 
 .book_content h3 {

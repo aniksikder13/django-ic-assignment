@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views.generic import CreateView, ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
 from .models import Book, Author, Category
 
 # Create your views here.
@@ -19,3 +19,9 @@ class BookDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+    
+
+class BookDelete(DeleteView):
+    model = Book
+    success_url = reverse_lazy('books')
+    http_method_names = ("post",)
